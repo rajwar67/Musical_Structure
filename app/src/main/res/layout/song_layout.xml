@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relLayout"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:layout_marginVertical="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="song name : marquee"
+        android:id="@+id/songTitleMarquee"/>
+    <ImageView
+        android:id="@+id/thumbnailBig"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        tools:src="@drawable/img"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/songTitleMarquee"
+        ></ImageView>
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/thumbnailBig">
+
+        <android.support.v7.widget.CardView
+            android:layout_marginTop="10dp"
+            android:layout_width="190dp"
+            android:layout_height="120dp"
+            android:layout_margin="5dp"
+            android:id="@+id/card1"
+            >
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+                <Button
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/favImage"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/like"
+                    />
+                <TextView
+                    android:layout_below="@id/favImage"
+                    android:text="Add to favourites"
+                    android:layout_width="wrap_content"
+                    android:textSize="11sp"
+                    android:layout_height="wrap_content"
+                    />
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_marginTop="10dp"
+            android:layout_width="190dp"
+            android:layout_height="120dp"
+            android:layout_margin="5dp"
+            android:id="@+id/card2"
+            android:layout_toRightOf="@+id/card1"
+            android:layout_below="@id/thumbnailBig">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+                <Button
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/homeImage"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/img"
+                    />
+                <TextView
+                    android:layout_below="@id/homeImage"
+                    android:text="Go to home"
+                    android:layout_width="wrap_content"
+                    android:textSize="11sp"
+                    android:layout_height="wrap_content"
+                    />
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
