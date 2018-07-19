@@ -17,7 +17,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Home extends AppCompatActivity {
 
@@ -41,17 +42,16 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+       // Toolbar toolbar =  findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager = findViewById(R.id.container);
+        setUpViewPager(mViewPager);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        TabLayout tabLayout = findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(mViewPager);
 
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
@@ -67,6 +67,13 @@ public class Home extends AppCompatActivity {
 
     }
 
+    private void setUpViewPager(ViewPager viewPager){
+        SectionsPagerAdapter adapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new HomeFragRecycler(), "HOME");
+        adapter.addFragment(new Favourites_Frag(), "FAVORITE");
+        viewPager.setAdapter(adapter);
+        //Add rest of your fragments here.
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -131,6 +138,9 @@ public class Home extends AppCompatActivity {
      */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
+        private final List<Fragment> fragmentList = new ArrayList<>();
+        private final List<String> fragmentNameList = new ArrayList<>();
+
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
         }
@@ -139,41 +149,23 @@ public class Home extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            Fragment fragment =null;
-            switch(position){
-                case 0:
-                    fragment= new Home_frag();
-                    break;
-                case 1:
-                    fragment=new MyMusic_Frag();
-                    break;
-                case 2:
-                    fragment= new Favourites_Frag();
-                    break;
-
-            }
-            return fragment;
+            return fragmentList.get(position);
         }
 
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return fragmentList.size();
+        }
+
+        public void addFragment(Fragment fragment, String title){
+            fragmentList.add(fragment);
+            fragmentNameList.add(title);
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-            switch(position)
-            {
-                case 0:
-                    return "Home";
-                case 1:
-                    return "MY Music";
-                case 2:
-                    return "Favourites";
-
-            }
-            return null;
+            return fragmentNameList.get(position);
         }
     }
 }

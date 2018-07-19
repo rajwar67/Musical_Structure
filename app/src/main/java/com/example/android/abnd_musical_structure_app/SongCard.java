@@ -16,19 +16,21 @@ public class SongCard {
     private String mArtist;
     private int mImageRes;
 
-    public SongCard(String songTitle, String artist,int imageRes)
-    {
-        msongTitle=songTitle;
-        mArtist=artist;
-        mImageRes=imageRes;
+    public SongCard(String songTitle, String artist, int imageRes) {
+        msongTitle = songTitle;
+        mArtist = artist;
+        mImageRes = imageRes;
     }
-    public String getSongTitle(){
+
+    public String getSongTitle() {
         return msongTitle;
     }
-    public String getArtist(){
+
+    public String getArtist() {
         return mArtist;
     }
-    public int getImageRes(){
+
+    public int getImageRes() {
         return mImageRes;
     }
 }
