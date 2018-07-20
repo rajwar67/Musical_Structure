@@ -14,13 +14,15 @@
         android:id="@+id/artist_playlist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:scrollbarThumbVertical="@color/colorPrimary"
         android:layout_below="@id/artist_Thumbnail"
         android:orientation="vertical"
         android:layout_margin="10dp"
         android:paddingBottom="16dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:paddingTop="16dp">
+        android:paddingTop="16dp"
+        android:scrollbarSize="3dp">
 
     </ListView>
 

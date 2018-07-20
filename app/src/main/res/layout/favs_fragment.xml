@@ -16,6 +16,8 @@
         android:paddingRight="16dp"
         android:paddingTop="16dp"
         android:dividerHeight="1dp"
+        android:scrollbarSize="3dp"
+        android:scrollbarThumbVertical="@color/colorPrimary"
         tools:context="com.example.android.abnd_musical_structure_app.Playlist">
 
     </ListView>

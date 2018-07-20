@@ -38,13 +38,13 @@ public class Favourites_Frag extends Fragment {
         songPlayList.add(new SongCard("Dusk Till Dawn", "Zayn Malik", R.drawable.icon9));
         songPlayList.add(new SongCard("Everybody hates me", "The Chainsmokers", R.drawable.chain));
         songPlayList.add(new SongCard("Bad at Love", "Halsey", R.drawable.icon11));
-        songPlayList.add(new SongCard("Young Dumb Broke", "DJ Khaleed", R.drawable.play));
-        songPlayList.add(new SongCard("Born To Be Yours", "Imagine Dragons", R.drawable.play));
-        songPlayList.add(new SongCard("Lonely Together", "Avicii", R.drawable.play));
-        songPlayList.add(new SongCard("Broken Arrows", "Avicii", R.drawable.play));
-        songPlayList.add(new SongCard("The Way I am", "Charlie Puth", R.drawable.play));
-        songPlayList.add(new SongCard("Entertainer", "Zayn Malik", R.drawable.play));
-        songPlayList.add(new SongCard("Wolves", "Selena Gomez", R.drawable.play));
+        songPlayList.add(new SongCard("Young Dumb Broke", "DJ Khaleed", R.drawable.icon6));
+        songPlayList.add(new SongCard("Born To Be Yours", "Imagine Dragons", R.drawable.icon5));
+        songPlayList.add(new SongCard("Lonely Together", "Avicii", R.drawable.icon9));
+        songPlayList.add(new SongCard("Broken Arrows", "Avicii", R.drawable.icon4));
+        songPlayList.add(new SongCard("The Way I am", "Charlie Puth", R.drawable.icon3));
+        songPlayList.add(new SongCard("Entertainer", "Zayn Malik", R.drawable.icon2));
+        songPlayList.add(new SongCard("Wolves", "Selena Gomez", R.drawable.icon1));
 
 
         SongAdapter adapter = new SongAdapter(getContext(), songPlayList);

@@ -62,7 +62,7 @@ public class Home extends AppCompatActivity {
     private void setUpViewPager(ViewPager viewPager) {
         SectionsPagerAdapter adapter = new SectionsPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new HomeFragRecycler(), "HOME");
-        adapter.addFragment(new Favourites_Frag(), "FAVORITE");
+        adapter.addFragment(new Favourites_Frag(), "ALL SONGS");
         viewPager.setAdapter(adapter);
 
     }

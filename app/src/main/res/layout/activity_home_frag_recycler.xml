@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:scrollbarThumbVertical="@color/colorPrimary"
+    android:scrollbarSize="5dp"
     tools:context="com.example.android.abnd_musical_structure_app.HomeFragRecycler">
 
     <LinearLayout
