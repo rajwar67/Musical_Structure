@@ -30,7 +30,7 @@ public class HomeFragRecycler extends Fragment {
     private SongRecyclerAdapter recyclerAdapter;
     private SongRecyclerAdapter recyclerAdapter1;
     private ArtistRecyclerAdapter recyclerAdapterA;
-    private ArtistRecyclerAdapter recyclerAdapter2;
+    private SongRecyclerAdapter recyclerAdapter2;
     private List<SongCard> songCardList;
     private List<SongCard> songCardList1;
     private List<SongCard> songCardListA;
@@ -55,7 +55,7 @@ public class HomeFragRecycler extends Fragment {
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setAdapter(recyclerAdapter);
 
-       // SnapHelper snapHelper = new LinearSnapHelper();
+        // SnapHelper snapHelper = new LinearSnapHelper();
         //snapHelper.attachToRecyclerView(mRecyclerView);
 
         //populateList();
@@ -74,11 +74,8 @@ public class HomeFragRecycler extends Fragment {
         mRecyclerView1.setHasFixedSize(true);
         mRecyclerView1.setAdapter(recyclerAdapter1);
 
-        SnapHelper snapHelper1 = new LinearSnapHelper();
-        snapHelper1.attachToRecyclerView(mRecyclerView1);
-
-
-
+        //SnapHelper snapHelper1 = new LinearSnapHelper();
+        //snapHelper1.attachToRecyclerView(mRecyclerView1);
 
 
         //*********************** L A T E S T . E N G L I S H . E N D ************************
@@ -98,8 +95,8 @@ public class HomeFragRecycler extends Fragment {
         mRecyclerViewA.setHasFixedSize(true);
         mRecyclerViewA.setAdapter(recyclerAdapterA);
 
-        SnapHelper snapHelperA = new LinearSnapHelper();
-        snapHelperA.attachToRecyclerView(mRecyclerViewA);
+        //SnapHelper snapHelperA = new LinearSnapHelper();
+        //snapHelperA.attachToRecyclerView(mRecyclerViewA);
 
 
         //************************ A R T I S T S .  E N D ********************************
@@ -108,7 +105,7 @@ public class HomeFragRecycler extends Fragment {
 
         mRecyclerView2 = view.findViewById(R.id.recycle2);
         songCardList2 = new ArrayList<>();
-        recyclerAdapter2 = new ArtistRecyclerAdapter(this.getActivity(), songCardList2);
+        recyclerAdapter2 = new SongRecyclerAdapter(this.getActivity(), songCardList2);
 
         //final LinearLayoutManager layoutManager1 = new LinearLayoutManager(getActivity());
         //layoutManager1.setOrientation(LinearLayoutManager.HORIZONTAL);
@@ -117,8 +114,8 @@ public class HomeFragRecycler extends Fragment {
         mRecyclerView2.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView2.setHasFixedSize(true);
         mRecyclerView2.setAdapter(recyclerAdapter2);
-        SnapHelper snapHelper2 = new LinearSnapHelper();
-        snapHelper2.attachToRecyclerView(mRecyclerView2);
+        //SnapHelper snapHelper2 = new LinearSnapHelper();
+        //snapHelper2.attachToRecyclerView(mRecyclerView2);
 
 
         //************************ A R T I S T S .  E N D ********************************
@@ -132,68 +129,63 @@ public class HomeFragRecycler extends Fragment {
         //************************************* P a s s ****************************
 
 
-
-
-
-
         //*************************************P A S S ***************************
-
 
 
         return view;
     }
 
-    private void populateListArtist(){
-        songCardListA.add(new SongCard("Miley Cyrus", "Kygo",R.drawable.miley));
-        songCardListA.add(new SongCard("Marshmello", "Jacob Lee",R.drawable.artist1));
-        songCardListA.add(new SongCard("Taylor Swift", "Imagine Dragons",R.drawable.taylor));
-        songCardListA.add(new SongCard("Katy Perry", "Avicii",R.drawable.katy));
-        songCardListA.add(new SongCard("Chainsmokers", "Avicii",R.drawable.chain));
-        songCardListA.add(new SongCard("Bebe Rexha", "Charlie Puth",R.drawable.rexha));
-        songCardListA.add(new SongCard("Alan Walker", "Zayn Malik",R.drawable.alan));
-        songCardListA.add(new SongCard("Nick Jonas", "Enrique Iglesias",R.drawable.nick));
+    private void populateListArtist() {
+        songCardListA.add(new SongCard("Miley Cyrus", "Song Title", R.drawable.miley));
+        songCardListA.add(new SongCard("Marshmello", "Song Title", R.drawable.artist1));
+        songCardListA.add(new SongCard("Taylor Swift", "Song Title", R.drawable.taylor));
+        songCardListA.add(new SongCard("Katy Perry", "Song Title", R.drawable.katy));
+        songCardListA.add(new SongCard("Chainsmokers", "Song Title", R.drawable.chain));
+        songCardListA.add(new SongCard("Bebe Rexha", "Song Title", R.drawable.rexha));
+        songCardListA.add(new SongCard("Alan Walker", "Song Title", R.drawable.alan));
+        songCardListA.add(new SongCard("Nick Jonas", "Song Title", R.drawable.nick));
 
     }
 
-    private void populateList(){
-        songCardList.add(new SongCard("Dusk Till Dawn", "Zayn Malik",R.drawable.icon9));
-        songCardList.add(new SongCard("Move To Miami", "Enrique Iglesias",R.drawable.icon7));
-        songCardList.add(new SongCard("Lonely Together", "Avicii",R.drawable.icon4));
-        songCardList.add(new SongCard("Secrets", "Jacob Lee",R.drawable.icon1));
-        songCardList.add(new SongCard("Born To Be Yours", "Imagine Dragons",R.drawable.icon3));
-        songCardList.add(new SongCard("Remind Me To Forget", "Kygo",R.drawable.icon5));
-        songCardList.add(new SongCard("Broken Arrows", "Avicii",R.drawable.icon6));
-        songCardList.add(new SongCard("The Way I am", "Charlie Puth",R.drawable.icon8));
-        songCardList.add(new SongCard("Entertainer", "Zayn Malik",R.drawable.icon12));
-        songCardList.add(new SongCard("Wolves", "Selena Gomez",R.drawable.icon10));
+    private void populateList() {
+        songCardList.add(new SongCard("Dusk Till Dawn", "Zayn Malik", R.drawable.icon9));
+        songCardList.add(new SongCard("Move To Miami", "Enrique Iglesias", R.drawable.icon7));
+        songCardList.add(new SongCard("Lonely Together", "Avicii", R.drawable.icon4));
+        songCardList.add(new SongCard("Secrets", "Jacob Lee", R.drawable.icon1));
+        songCardList.add(new SongCard("Born To Be Yours", "Imagine Dragons", R.drawable.icon3));
+        songCardList.add(new SongCard("Remind Me To Forget", "Kygo", R.drawable.icon5));
+        songCardList.add(new SongCard("Broken Arrows", "Avicii", R.drawable.icon6));
+        songCardList.add(new SongCard("The Way I am", "Charlie Puth", R.drawable.icon8));
+        songCardList.add(new SongCard("Entertainer", "Zayn Malik", R.drawable.icon12));
+        songCardList.add(new SongCard("Wolves", "Selena Gomez", R.drawable.icon10));
         //songCardList.add(new SongCard("Chasing Cars", "Snow Patrol",R.drawable.play));
-        songCardList.add(new SongCard("Everybody hates me", "The Chainsmokers",R.drawable.chain));
-        songCardList.add(new SongCard("Bad at Love", "Halsey",R.drawable.icon11));
+        songCardList.add(new SongCard("Everybody hates me", "The Chainsmokers", R.drawable.chain));
+        songCardList.add(new SongCard("Bad at Love", "Halsey", R.drawable.icon11));
 
     }
 
-    private void populateList1(){
-        songCardList1.add(new SongCard("Natural", "Imagine Dragons",R.drawable.trending1));
-        songCardList1.add(new SongCard("Dancing Alone", "Charlie Puth",R.drawable.trending7));
-        songCardList1.add(new SongCard("EatSide", "Zayn Malik",R.drawable.trending6));
-        songCardList1.add(new SongCard("Happy Now", "Imagine Dragons",R.drawable.trending2));
-        songCardList1.add(new SongCard("Jump Suit", "Avicii",R.drawable.trending3));
-        songCardList1.add(new SongCard("Magenta Riddim", "Kygo",R.drawable.trending4));
-        songCardList1.add(new SongCard("Sun in our eyes", "Enrique Iglesias",R.drawable.trending5));
+    private void populateList1() {
+        songCardList1.add(new SongCard("Natural", "Imagine Dragons", R.drawable.trending1));
+        songCardList1.add(new SongCard("Dancing Alone", "Charlie Puth", R.drawable.trending7));
+        songCardList1.add(new SongCard("EatSide", "Zayn Malik", R.drawable.trending6));
+        songCardList1.add(new SongCard("Happy Now", "Imagine Dragons", R.drawable.trending2));
+        songCardList1.add(new SongCard("Jump Suit", "Avicii", R.drawable.trending3));
+        songCardList1.add(new SongCard("Magenta Riddim", "Kygo", R.drawable.trending4));
+        songCardList1.add(new SongCard("Sun in our eyes", "Enrique Iglesias", R.drawable.trending5));
 
     }
 
-    private void populateList2(){
-        songCardList2.add(new SongCard("Entertainer", "Zayn Malik",R.drawable.icon12));
-        songCardList2.add(new SongCard("The Way I am", "Charlie Puth",R.drawable.icon8));
-        songCardList2.add(new SongCard("Magenta Riddim", "Kygo",R.drawable.trending4));
-        songCardList2.add(new SongCard("Jump Suit", "Avicii",R.drawable.trending3));
-        songCardList2.add(new SongCard("Wolves", "Selena Gomez",R.drawable.icon10));
-        songCardList2.add(new SongCard("Everybody hates me", "The Chainsmokers",R.drawable.chain));
-        songCardList2.add(new SongCard("Sun in our eyes", "Enrique Iglesias",R.drawable.trending5));
-        songCardList2.add(new SongCard("Wolves", "Selena Gomez",R.drawable.icon10));
-        songCardList2.add(new SongCard("Bad at Love", "Halsey",R.drawable.icon11));
-        songCardList2.add(new SongCard("Move To Miami", "Enrique Iglesias",R.drawable.icon7));
-        songCardList2.add(new SongCard("Dusk Till Dawn", "Zayn Malik",R.drawable.icon9));
+    private void populateList2() {
+        songCardList2.add(new SongCard("Entertainer", "Zayn Malik", R.drawable.icon12));
+        songCardList2.add(new SongCard("The Way I am", "Charlie Puth", R.drawable.icon8));
+        songCardList2.add(new SongCard("Magenta Riddim", "Kygo", R.drawable.trending4));
+        songCardList2.add(new SongCard("Jump Suit", "Avicii", R.drawable.trending3));
+        songCardList2.add(new SongCard("Wolves", "Selena Gomez", R.drawable.icon10));
+        songCardList2.add(new SongCard("Everybody hates me", "The Chainsmokers", R.drawable.chain));
+        songCardList2.add(new SongCard("Sun in our eyes", "Enrique Iglesias", R.drawable.trending5));
+        songCardList2.add(new SongCard("Wolves", "Selena Gomez", R.drawable.icon10));
+        songCardList2.add(new SongCard("Bad at Love", "Halsey", R.drawable.icon11));
+        songCardList2.add(new SongCard("Move To Miami", "Enrique Iglesias", R.drawable.icon7));
+        songCardList2.add(new SongCard("Dusk Till Dawn", "Zayn Malik", R.drawable.icon9));
     }
 }

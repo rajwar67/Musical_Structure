@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.android.abnd_musical_structure_app.HomeFragRecycler"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:scrollbarThumbVertical="@color/colorPrimary"
-    >
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    tools:context="com.example.android.abnd_musical_structure_app.HomeFragRecycler">
+
+    <LinearLayout
+        android:id="@+id/parentLayoutt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
         <LinearLayout
-            android:padding="5dp"
-            android:layout_margin="6dp"
+            android:id="@+id/parentLayoutA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_margin="6dp"
+            android:orientation="vertical"
+            android:padding="5dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Artists"
                 android:layout_margin="10dp"
-                android:textSize="15sp"
-                />
+                android:text="Artists"
+                android:textSize="15sp" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycleA"
@@ -36,97 +36,107 @@
         </LinearLayout>
 
 
-
-
-    //************** F I R S T . S O N G . L I S T **************
-
-    <android.support.v7.widget.CardView
-        android:padding="10dp"
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="8dp">
         <LinearLayout
+            android:id="@+id/parentLayoutB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Recommended songs"
-            android:layout_margin="10dp"
-            android:textSize="15sp"
-            />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        </LinearLayout>
+            //************** F I R S T . S O N G . L I S T **************
 
-
-    </android.support.v7.widget.CardView>
-
-    //************SECOND LIST VIEW********************
-    <android.support.v7.widget.CardView
-        android:padding="10dp"
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="8dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Latest English"
-                android:layout_margin="10dp"
-                android:textSize="15sp"
-                />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycle1"
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-
-
-    </android.support.v7.widget.CardView>
-
-    //************Third LIST VIEW********************
-    <android.support.v7.widget.CardView
-        android:padding="10dp"
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="8dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Top 10"
                 android:layout_margin="10dp"
-                android:textSize="15sp"
-                />
+                android:padding="10dp"
+                app:cardCornerRadius="8dp">
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycle2"
+                <LinearLayout
+                    android:id="@+id/rsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Recommended songs"
+                        android:textSize="15sp" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            //************SECOND LIST VIEW********************
+
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:id="@+id/englishLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Latest English"
+                        android:textSize="15sp" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycle1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            //************Third LIST VIEW********************
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                app:cardCornerRadius="8dp">
+
+                <LinearLayout
+                    android:id="@+id/topLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Top 10"
+                        android:textSize="15sp" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycle2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
         </LinearLayout>
 
 
-    </android.support.v7.widget.CardView>
-
-
-
-</LinearLayout>
+    </LinearLayout>
 </ScrollView>

@@ -17,15 +17,16 @@ import java.util.ArrayList;
 
 public class SongAdapter extends ArrayAdapter<SongCard> {
 
-    public SongAdapter(Context context,ArrayList<SongCard> songCards){
-        super(context,0,songCards);
+    public SongAdapter(Context context, ArrayList<SongCard> songCards) {
+        super(context, 0, songCards);
 
     }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Check if the existing view is being reused, otherwise inflate the view
         View listItemView = convertView;
-        if(listItemView == null) {
+        if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
                     R.layout.song_view, parent, false);
         }
@@ -41,7 +42,7 @@ public class SongAdapter extends ArrayAdapter<SongCard> {
         TextView artistTextView = (TextView) listItemView.findViewById(R.id.artistTitle);
         artistTextView.setText(currentWord.getArtist());
 
-        ImageView thumbnailView=(ImageView) listItemView.findViewById(R.id.thumbnail);
+        ImageView thumbnailView = (ImageView) listItemView.findViewById(R.id.thumbnail);
         thumbnailView.setImageResource(currentWord.getImageRes());
 
        /* // Find the ImageView in the list_item.xml layout with the ID list_item_icon
